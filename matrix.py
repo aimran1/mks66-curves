@@ -16,8 +16,10 @@ def make_hermite():
     pass
 
 def generate_curve_coefs( p0, p1, p2, p3, t ):
-    pass
-
+    Hinv = [[2,-2,1,1],[-3,3,-2,-1],[0,0,1,0],[1,0,0,0]]
+    m = [p0,p1,p2,p3]
+    matrix_mult(Hinv,m)
+    return m,t
 
 def make_translate( x, y, z ):
     t = new_matrix()
@@ -71,7 +73,7 @@ def print_matrix( matrix ):
             s+= str(matrix[c][r]) + ' '
         s+= '\n'
     print s
-    
+
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
 def ident( matrix ):
