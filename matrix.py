@@ -13,12 +13,13 @@ def make_bezier():
     pass
 
 def make_hermite():
+    Hinv = [[2,-2,1,1],[-3,3,-2,-1],[0,0,1,0],[1,0,0,0]]
     pass
 
 def generate_curve_coefs( p0, p1, p2, p3, t ):
-    Hinv = [[2,-2,1,1],[-3,3,-2,-1],[0,0,1,0],[1,0,0,0]]
+    H = make_hermite()
     m = [p0,p1,p2,p3]
-    matrix_mult(Hinv,m)
+    matrix_mult(H,m)
     return m,t
 
 def make_translate( x, y, z ):
