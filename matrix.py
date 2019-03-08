@@ -14,7 +14,7 @@ def make_bezier():
 
 def make_hermite():
     Hinv = [[2,-2,1,1],[-3,3,-2,-1],[0,0,1,0],[1,0,0,0]]
-    pass
+    return Hinv
 
 def generate_curve_coefs( p0, p1, p2, p3, t ):
     H = make_hermite()
