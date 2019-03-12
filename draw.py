@@ -5,10 +5,10 @@ from matrix import *
 def add_circle( points, cx, cy, cz, r, step ):
     t = 0
     while t <= 1:
-        x = cx + r * math.cos(math.radians(t))
-        y = cy + r * math.sin(math.radians(t))
-        nextx = cx + r * math.cos(math.radians(t+step))
-        nexty = cy + r * math.sin(math.radians(t+step))
+        x = round(cx + float(r) * math.cos(math.radians(t)))
+        y = round(cy + float(r) * math.sin(math.radians(t)))
+        nextx = round(cx + float(r) * math.cos(math.radians(t+step)))
+        nexty = round(cy + float(r) * math.sin(math.radians(t+step)))
         add_edge(points,x,y,cz,nextx,nexty,cz)
         t += step
 
