@@ -14,9 +14,7 @@ def add_circle( points, cx, cy, cz, r, step ):
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
     xParam = generate_curve_coefs( x0, x1, x2, x3, curve_type )
-    yParam = generate_curve_coefs( y0, y1, y2, y3, curve_type )
-    while x0 <= x1:
-        pass
+    yParam = generate_curve_coefs( y0, y1, y2, y3, curve_type )        
 
 
 def draw_lines( matrix, screen, color ):
