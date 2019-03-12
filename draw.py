@@ -3,13 +3,14 @@ from matrix import *
 
 
 def add_circle( points, cx, cy, cz, r, step ):
-    #x = rcos(step)
-    pos = 0
-    while pos < 1:
-        x = cx + r * math.cos(math.radians(pos))
-        y = cy + r * math.sin(math.radians(pos))
-        add_point(points,x,y,cz)
-        pos += step
+    t = 0
+    while t <= 1:
+        x = cx + r * math.cos(math.radians(t))
+        y = cy + r * math.sin(math.radians(t))
+        nextx = cx + r * math.cos(math.radians(t+step))
+        nexty = cy + r * math.sin(math.radians(t+step))
+        add_edge(points,x,y,cz,nextx,nexty,cz)
+        t += step
 
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
