@@ -10,7 +10,8 @@ z0  z1  ... zn
 import math
 
 def make_bezier():
-    pass
+    Bez = [[1,0,0,0],[-3,3,0,0],[3,-6,3,0],[-1,3,-3,1]]
+    return Bez
 
 def make_hermite():
     Hinv = [[2,-2,1,1],[-3,3,-2,-1],[0,0,1,0],[1,0,0,0]]
