@@ -5,10 +5,10 @@ from matrix import *
 def add_circle( points, cx, cy, cz, r, step ):
     t = 0
     while t <= 1:
-        x = cx + (r) * math.cos(math.radians(t))
-        y = cy + (r) * math.sin(math.radians(t))
-        nextx = cx + (r) * math.cos(math.radians(t+step))
-        nexty = cy + (r) * math.sin(math.radians(t+step))
+        x = cx + (r) * math.cos(t*2*math.pi)
+        y = cy + (r) * math.sin(t*2*math.pi)
+        nextx = cx + (r) * math.cos(2*math.pi*(t+step))
+        nexty = cy + (r) * math.sin(2*math.pi*(t+step))
         add_edge(points,x,y,cz,nextx,nexty,cz)
         t += step
 
@@ -16,8 +16,8 @@ def add_circle( points, cx, cy, cz, r, step ):
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
     xCoeff = generate_curve_coefs( x0, x1, x2, x3, curve_type )
     yCoeff = generate_curve_coefs( y0, y1, y2, y3, curve_type )
-    t = 0
-    while t <= 1:
+    t = step
+    while t <= 1 + step:
         x = (xCoeff[0] * (t ** 3))+ (xCoeff[1] * (t ** 2)) + (xCoeff[2] * t) + (xCoeff[3])
         y = (yCoeff[0] * (t ** 3))+ (yCoeff[1] * (t ** 2)) + (yCoeff[2] * t) + (yCoeff[3])
         nextx = (xCoeff[0] * ((t+step) ** 3))+ (xCoeff[1] * ((t+step) ** 2)) + (xCoeff[2] * (t+step)) + (xCoeff[3])
