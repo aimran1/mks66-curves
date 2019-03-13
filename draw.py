@@ -18,10 +18,10 @@ def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
     yCoeff = generate_curve_coefs( y0, y1, y2, y3, curve_type )
     t = 0
     while t <= 1:
-        x = (xCoeff[0] * (t ** 3))+ (xCoeff[1] * (t ** 2)) + (xCoeff[2] * t) + (xCoeff[1])
-        y = (yCoeff[0] * (t ** 3))+ (yCoeff[1] * (t ** 2)) + (yCoeff[2] * t) + (yCoeff[1])
-        nextx = (xCoeff[0] * ((t+step) ** 3))+ (xCoeff[1] * ((t+step) ** 2)) + (xCoeff[2] * (t+step)) + (xCoeff[1])
-        nexty = (yCoeff[0] * ((t+step) ** 3))+ (yCoeff[1] * ((t+step) ** 2)) + (yCoeff[2] * (t+step)) + (yCoeff[1])
+        x = (xCoeff[0] * (t ** 3))+ (xCoeff[1] * (t ** 2)) + (xCoeff[2] * t) + (xCoeff[3])
+        y = (yCoeff[0] * (t ** 3))+ (yCoeff[1] * (t ** 2)) + (yCoeff[2] * t) + (yCoeff[3])
+        nextx = (xCoeff[0] * ((t+step) ** 3))+ (xCoeff[1] * ((t+step) ** 2)) + (xCoeff[2] * (t+step)) + (xCoeff[3])
+        nexty = (yCoeff[0] * ((t+step) ** 3))+ (yCoeff[1] * ((t+step) ** 2)) + (yCoeff[2] * (t+step)) + (yCoeff[3])
         t += step
         add_edge(points,x,y,0,nextx,nexty,0)
 
