@@ -22,9 +22,9 @@ def generate_curve_coefs( p0, p1, p2, p3, t ):
     H = make_hermite()
     B = make_bezier()
     if t == "bezier":
-        matrix_mult(B,m)
+        matrix_mult(B,[m])
     elif t == "hermite":
-        matrix_mult(H,m)
+        matrix_mult(H,[m])
     return m
 
 def make_translate( x, y, z ):
